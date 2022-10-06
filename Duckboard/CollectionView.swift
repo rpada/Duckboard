@@ -10,16 +10,23 @@ import UIKit
 import CoreData
 
 class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+ 
     var dataController: DataController!
     
+    @IBOutlet weak var NoPhotosFound: UILabel!
     @IBOutlet weak var collectionPhotos: UICollectionView!
-    var favoritedPhoto: [favoritePhoto]!
-    var favePhoto: String = ""
-
+    
     override func viewDidLoad() {
-        print(favePhoto)
+        favoritePhoto.sharedInstance().favePhoto = fetchFlickrPhotos()
+        if favoritePhoto.sharedInstance().favePhoto.count > 0 {
+            self.NoPhotosFound.isHidden = true
+            fetchFlickrPhotos()
+            print("Fetched photo:", favoritePhoto.sharedInstance().favePhoto.count)
+        } else {
+            self.NoPhotosFound.isHidden = false
+        }
     }
+    
     // from https://stackoverflow.com/questions/24195310/how-to-add-an-action-to-a-uialertview-button-using-swift-ios
     
     // stack overflow said to use DispatchQueue: https://stackoverflow.com/questions/58087536/modifications-to-the-layout-engine-must-not-be-performed-from-a-background-thr
@@ -34,11 +41,13 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func fetchFlickrPhotos() -> [FavoritePhoto] {
         let fetchRequest: NSFetchRequest<FavoritePhoto> = FavoritePhoto.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        print(fetchRequest)
         do {
             let result = try dataController.viewContext.fetch(fetchRequest)
             favoritePhoto.sharedInstance().favePhoto = result
             for fetchedPhoto in favoritePhoto.sharedInstance().favePhoto {
-                favoritePhoto.sharedInstance().favePhoto.append(fetchedPhoto)
                 collectionPhotos.reloadData()
             }
             print("fetching 2")
@@ -47,6 +56,7 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         return favoritePhoto.sharedInstance().favePhoto
     }
+    
     // with help from Udacity mentor: https://knowledge.udacity.com/questions/906577
         func downloadImage( imagePath:String, completionHandler: @escaping (_ imageData: Data?, _ errorString: String?) -> Void){
                 let session = URLSession.shared
@@ -63,31 +73,38 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }
                 task.resume()
             }
+    
+    
 
         // MARK: Collection View Data Source
         //from Udacity Lession 8.8 Setup the Sent Memes Collection View
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            1
+            favoritePhoto.sharedInstance().favePhoto.count
         }
-        //from Udacity Lession 8.8 Setup the Sent Memes Collection View
         //from Udacity Lession 8.8 Setup the Sent Memes Collection View
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellView", for: indexPath) as! ImageCellView
-            // https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
-            if let url = URL(string: favePhoto) {
-                 let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                     guard let data = data, error == nil else { return }
-                     
-                     DispatchQueue.main.async { /// execute on main thread
-                         // Set the name and image
-                         cell.PhotoCell.image = UIImage(data: data)
-                         try? self.dataController.viewContext.save()
-                     }
-                 }
-                 
-                 task.resume()
-             }
+            
+            let cellImage = favoritePhoto.sharedInstance().favePhoto[indexPath.row]
+            // with help from Udacity mentor: https://knowledge.udacity.com/questions/906577
+            
+            // from Udacity project review https://review.udacity.com/#!/reviews/3735670
+            if cellImage.coreImage == nil{
+                let url = URL(string: cellImage.coreURL ?? "")
+                downloadImage(imagePath: url!.absoluteString) {(data, error) in
+                    DispatchQueue.main.async{
+                        cell.PhotoCell.image = UIImage(data: data!)
+                    }
+                    cellImage.coreImage = data
+                    try! self.dataController.viewContext.save()
+                }
+            } else {
+                DispatchQueue.main.async{
+                cell.PhotoCell.image = UIImage(data: cellImage.coreImage!)
+                }
+            }
             return cell
+            
         }
         
         // from Meme Me 2.0
@@ -103,6 +120,13 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
             return 2
         }
-   
-
+    // https://developer.apple.com/documentation/uikit/uicollectionviewdelegate/1618032-collectionview
+    // https://stackoverflow.com/questions/51526703/didselectitemat-and-diddeselectitemat-from-uicollectionview
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            self.dataController.viewContext.delete(favoritePhoto.sharedInstance().favePhoto[indexPath.row])
+        favoritePhoto.sharedInstance().favePhoto.remove(at: indexPath.row)
+            self.collectionPhotos.reloadData()
+            try? dataController.viewContext.save()
+        }
+    
 }

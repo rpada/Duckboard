@@ -16,7 +16,7 @@ class DuckClient {
         var stringValue: String {
             switch self {
             case .grabPhotos:
-                return Endpoints.base + "/random"
+                return Endpoints.base + "/random" 
             }
         }
         var url: URL {

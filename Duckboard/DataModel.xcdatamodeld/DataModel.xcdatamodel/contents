@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavoritePhoto" representedClassName="FavoritePhoto" syncable="YES" codeGenerationType="class">
-        <attribute name="coreImage" optional="YES" attributeType="Binary"/>
+        <attribute name="coreImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="coreURL" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="SinglePhoto" representedClassName="SinglePhoto" syncable="YES" codeGenerationType="class">
         <attribute name="message" optional="YES" attributeType="String"/>
