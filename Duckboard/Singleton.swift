@@ -22,8 +22,6 @@ class singlePhotoSingleton: NSObject {
 }
 
 class favoritePhoto: NSObject {
-
-    // from my On the Map project submission feedback and with help from https://knowledge.udacity.com/questions/900468
     
     var favePhoto = [FavoritePhoto]()
     

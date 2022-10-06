@@ -49,6 +49,12 @@ class DuckClient {
         task.resume()
         return task
     }
+    
+    // https://classroom.udacity.com/nanodegrees/nd003/parts/2b0b0f37-f10b-41dc-abb4-a346f293027a/modules/4b26ca51-f2e8-45a3-92df-a1797f597a19/lessons/cd890113-636f-474a-8558-8b1a5e633c77/concepts/13238b1f-33b9-42a0-9597-6618a9168a33
+    
+    // https://classroom.udacity.com/nanodegrees/nd003/parts/2b0b0f37-f10b-41dc-abb4-a346f293027a/modules/4b26ca51-f2e8-45a3-92df-a1797f597a19/lessons/3283ae8e-5dd5-483b-9c49-2faac7c53276/concepts/6acdc289-de30-4f0e-b408-626668c70629
+    
+    // same concept as Virtual Tourist - "GET" photo URLs
     class func generatePhoto(completion: @escaping (DuckResponse?, Error?) -> Void) {
         taskForGETRequest(url: Endpoints.grabPhotos.url, responseType: DuckResponse.self) { response, error in
             if let response = response {

@@ -17,6 +17,7 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionPhotos: UICollectionView!
     
     override func viewDidLoad() {
+        // https://knowledge.udacity.com/questions/906577
         favoritePhoto.sharedInstance().favePhoto = fetchFlickrPhotos()
         if favoritePhoto.sharedInstance().favePhoto.count > 0 {
             self.NoPhotosFound.isHidden = true
@@ -39,6 +40,8 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    // // https://classroom.udacity.com/nanodegrees/nd003/parts/9f3d04d4-d74a-4032-bf01-8887182fee62/modules/bbdd0d82-ac18-46b4-8bd4-246082887515/lessons/62c0b010-315c-4a1c-9bab-de477fff1aab/concepts/49036d1d-4810-4bec-b973-abe80a5dee6b
     func fetchFlickrPhotos() -> [FavoritePhoto] {
         let fetchRequest: NSFetchRequest<FavoritePhoto> = FavoritePhoto.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -87,7 +90,6 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let cellImage = favoritePhoto.sharedInstance().favePhoto[indexPath.row]
             // with help from Udacity mentor: https://knowledge.udacity.com/questions/906577
-            
             // from Udacity project review https://review.udacity.com/#!/reviews/3735670
             if cellImage.coreImage == nil{
                 let url = URL(string: cellImage.coreURL ?? "")

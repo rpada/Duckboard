@@ -24,13 +24,15 @@ class ImageViewController: UIViewController {
     
     @IBAction func buttonPress(_ sender: UIButton) {
         self.FilledHeart.isHidden = false
-        
+        // this functionality I based off of the Virtual Tourist app- wherein you need to pass the value of the pin over to the next view controller.
         let favoritesController = self.storyboard?.instantiateViewController(withIdentifier: "CollectionView") as! CollectionView
         //https://stackoverflow.com/questions/7213346/get-latitude-and-longitude-from-annotation-view
         favoritesController.dataController = dataController
         saveImage()
     }
     
+    // // from https://classroom.udacity.com/nanodegrees/nd003/parts/2b0b0f37-f10b-41dc-abb4-a346f293027a/modules/4b26ca51-f2e8-45a3-92df-a1797f597a19/lessons/3283ae8e-5dd5-483b-9c49-2faac7c53276/concepts/126b0978-f775-480a-bac0-68a1396aa81a
+    // based on saving the images in the Virtual Tourist app
     func saveImage(){
         let photo = FavoritePhoto(context: dataController.viewContext)
         photo.coreURL = passedURL
@@ -44,7 +46,7 @@ class ImageViewController: UIViewController {
         self.FilledHeart.isHidden = true
         super.viewDidLoad()
         self.ActivityIndicator.isHidden = true
-      showImage()
+        showImage()
     }
     // from https://stackoverflow.com/questions/24195310/how-to-add-an-action-to-a-uialertview-button-using-swift-ios
     
@@ -79,6 +81,7 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func showMyDuckboard(_ sender: Any) {
+        // this functionality I based off of the Virtual Tourist app- wherein you need to pass the value of the pin over to the next view controller.
         let collectionController = self.storyboard?.instantiateViewController(withIdentifier: "CollectionView") as! CollectionView
         collectionController.dataController = self.dataController
         self.navigationController?.pushViewController(collectionController, animated: true)
@@ -100,7 +103,6 @@ class ImageViewController: UIViewController {
                              self.ActivityIndicator.isHidden = true
                          }
                      }
-                     
                      task.resume()
                  }
             } else {
