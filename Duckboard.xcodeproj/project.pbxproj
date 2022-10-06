@@ -22,7 +22,6 @@
 		A593CD9928EB8E18008B10E7 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A593CD9828EB8E18008B10E7 /* Struct.swift */; };
 		A593CD9B28EB98F6008B10E7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A593CD9A28EB98F6008B10E7 /* ImageViewController.swift */; };
 		A5ADD6B728ECF5F1001F7212 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */; };
-		A5ADD6B928EE69E1001F7212 /* ExpandPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADD6B828EE69E1001F7212 /* ExpandPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		A593CD9828EB8E18008B10E7 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		A593CD9A28EB98F6008B10E7 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		A5ADD6B828EE69E1001F7212 /* ExpandPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandPhotoViewController.swift; sourceTree = "<group>"; };
 		A5ADD6BA28EF9488001F7212 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,6 @@
 				A593CD8628EB6C98008B10E7 /* Main.storyboard */,
 				A55CB41228ECF3A800834FC0 /* ImageCellView.swift */,
 				A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */,
-				A5ADD6B828EE69E1001F7212 /* ExpandPhotoViewController.swift */,
 				A593CD9628EB8D35008B10E7 /* Client.swift */,
 				A593CD9828EB8E18008B10E7 /* Struct.swift */,
 				A593CD9428EB8B9F008B10E7 /* ButtonViewController.swift */,
@@ -180,7 +177,6 @@
 				A593CD9B28EB98F6008B10E7 /* ImageViewController.swift in Sources */,
 				A593CD8128EB6C97008B10E7 /* AppDelegate.swift in Sources */,
 				A55CB41328ECF3A800834FC0 /* ImageCellView.swift in Sources */,
-				A5ADD6B928EE69E1001F7212 /* ExpandPhotoViewController.swift in Sources */,
 				A593CD9728EB8D35008B10E7 /* Client.swift in Sources */,
 				A593CD8328EB6C97008B10E7 /* SceneDelegate.swift in Sources */,
 			);
