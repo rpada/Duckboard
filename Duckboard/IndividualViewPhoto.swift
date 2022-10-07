@@ -10,7 +10,6 @@ import UIKit
 
 class IndividualViewPhoto: UIViewController {
     
-    @IBOutlet weak var ShareImage: UIButton!
     var dataController: DataController!
     var selectedImage: String!
     

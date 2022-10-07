@@ -34,10 +34,8 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func setEditing(_ editing:Bool, animated:Bool){
         super.setEditing(editing, animated: animated)
         if (self.isEditing) {
-            self.editButtonItem.title = "Done"
             self.DeletePhoto.isHidden = false
         } else {
-            self.editButtonItem.title = "Edit"
             self.DeletePhoto.isHidden = true
         }
     }
