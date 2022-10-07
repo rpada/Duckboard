@@ -71,6 +71,7 @@ class ButtonViewController: UIViewController{
                 photoController.dataController = self.dataController
                self.navigationController?.pushViewController(photoController, animated: true)
             } else {
+                self.ActivityIndicator.isHidden = true 
                 self.showAlertAction(title: "Error", message: "Could not load a duck photo.")
             }
         }

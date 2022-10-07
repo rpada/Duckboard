@@ -23,6 +23,7 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         // https://knowledge.udacity.com/questions/906577
         favoritePhoto.sharedInstance().favePhoto = fetchFlickrPhotos()
         if favoritePhoto.sharedInstance().favePhoto.count > 0 {
+            self.collectionPhotos.reloadData()
             self.NoPhotosFound.isHidden = true
             fetchFlickrPhotos()
             print("Fetched photo:", favoritePhoto.sharedInstance().favePhoto.count)
@@ -30,6 +31,10 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.NoPhotosFound.isHidden = false
             editButtonItem.isHidden = true
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionPhotos.reloadData()
     }
     // https://developer.apple.com/documentation/uikit/uiviewcontroller/1621378-setediting
     override func setEditing(_ editing:Bool, animated:Bool){

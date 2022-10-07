@@ -24,11 +24,12 @@ class ImageViewController: UIViewController {
     
     @IBAction func buttonPress(_ sender: UIButton) {
         self.FilledHeart.isHidden = false
+        saveImage()
         // this functionality I based off of the Virtual Tourist app- wherein you need to pass the value of the pin over to the next view controller.
         let favoritesController = self.storyboard?.instantiateViewController(withIdentifier: "CollectionView") as! CollectionView
         //https://stackoverflow.com/questions/7213346/get-latitude-and-longitude-from-annotation-view
         favoritesController.dataController = dataController
-        saveImage()
+        
     }
     
     // // from https://classroom.udacity.com/nanodegrees/nd003/parts/2b0b0f37-f10b-41dc-abb4-a346f293027a/modules/4b26ca51-f2e8-45a3-92df-a1797f597a19/lessons/3283ae8e-5dd5-483b-9c49-2faac7c53276/concepts/126b0978-f775-480a-bac0-68a1396aa81a
@@ -60,7 +61,16 @@ class ImageViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
+    @IBAction func unfavorite(_ sender: Any) {
+        print("pressed 1")
+        self.FilledHeart.isHidden = true
+        for delete in favoritePhoto.sharedInstance().favePhoto {
+            if delete.coreURL == passedURL {
+                dataController.viewContext.delete(delete)
+                try? dataController.viewContext.save()
+            }
+        }
+    }
     func showImage(){
         self.ActivityIndicator.isHidden = false
         self.ActivityIndicator.startAnimating()
@@ -108,6 +118,7 @@ class ImageViewController: UIViewController {
                      task.resume()
                  }
             } else {
+                self.ActivityIndicator.isHidden = true
                 self.showAlertAction(title: "Error", message: "Could not load a duck photo.")
             }
         }

@@ -20,3 +20,8 @@ The API specification comes from the Duck API pulling photos.
 The Core Data specification comes from the Favorited photos being persisted. 
 
 To run the app, download the files and push "run" in your simulator. 
+
+Versions:
+XCode: 14.0.1
+Swift: 5.7 
+iOS: 16
