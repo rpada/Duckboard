@@ -12,6 +12,10 @@ Push the "Show me a duck!" button to load a photo of a duck. Once the photo is l
 
 Push the "Show me my Duckboard" button to show all the duck photos you favorited.
 
+On the Duckboard, you can click the "Edit" button to delete the photos. Click Done to exit the Editing view.
+
+If you don't click "Edit" and just tap on one of the photos, the photo expands and the user can view the photo bigger. 
+
 The API specification comes from the Duck API pulling photos.
 The Core Data specification comes from the Favorited photos being persisted. 
 
