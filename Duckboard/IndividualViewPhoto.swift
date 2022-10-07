@@ -39,17 +39,22 @@ class IndividualViewPhoto: UIViewController {
         self.ActivityIndicator.startAnimating()
         if let url = URL(string: selectedImage ?? "") {
              let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                 guard let data = data, error == nil else { return }
-                 
+                 // from Udacity project review- thank you!
+                 // https://review.udacity.com/#!/reviews/3742460
+                 guard let data = data, error == nil else {
+                   DispatchQueue.main.async {
+                    self.ActivityIndicator.isHidden = true
+                    self.showAlertAction(title: "Error", message: "Could not load the duck photo.")
+                        }
+                     return
+              }
                  DispatchQueue.main.async { /// execute on main thread
                      ///
+                     self.ActivityIndicator.isHidden = true
                      self.IndividualPhoto.image = UIImage(data: data)
                  }
              }
              task.resume()
-            self.ActivityIndicator.isHidden = true
-        } else {
-            self.showAlertAction(title: "Error", message: "Could not load the duck photo.")
         }
     }
     
