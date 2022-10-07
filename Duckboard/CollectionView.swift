@@ -158,3 +158,4 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
 }
+// source I used on storyboard: https://stackoverflow.com/questions/63545986/collectionview-didselectitemat-is-not-getting-called
