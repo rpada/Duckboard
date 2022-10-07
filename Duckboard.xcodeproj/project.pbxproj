@@ -21,6 +21,7 @@
 		A593CD9928EB8E18008B10E7 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A593CD9828EB8E18008B10E7 /* Struct.swift */; };
 		A593CD9B28EB98F6008B10E7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A593CD9A28EB98F6008B10E7 /* ImageViewController.swift */; };
 		A5ADD6B728ECF5F1001F7212 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */; };
+		A5ADD6BC28EFA46B001F7212 /* IndividualViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADD6BB28EFA46B001F7212 /* IndividualViewPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A593CD9A28EB98F6008B10E7 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A5ADD6BA28EF9488001F7212 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A5ADD6BB28EFA46B001F7212 /* IndividualViewPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualViewPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				A593CD8028EB6C97008B10E7 /* AppDelegate.swift */,
 				A593CD8228EB6C97008B10E7 /* SceneDelegate.swift */,
 				A593CD8628EB6C98008B10E7 /* Main.storyboard */,
+				A5ADD6BB28EFA46B001F7212 /* IndividualViewPhoto.swift */,
 				A55CB41228ECF3A800834FC0 /* ImageCellView.swift */,
 				A5ADD6B628ECF5F1001F7212 /* CollectionView.swift */,
 				A593CD9628EB8D35008B10E7 /* Client.swift */,
@@ -166,6 +169,7 @@
 			files = (
 				A593CD9928EB8E18008B10E7 /* Struct.swift in Sources */,
 				A55CB40D28ECD56B00834FC0 /* DataModel.xcdatamodeld in Sources */,
+				A5ADD6BC28EFA46B001F7212 /* IndividualViewPhoto.swift in Sources */,
 				A593CD9528EB8BA0008B10E7 /* ButtonViewController.swift in Sources */,
 				A55CB41128ECD7AE00834FC0 /* Singleton.swift in Sources */,
 				A55CB40F28ECD66A00834FC0 /* DataController.swift in Sources */,
