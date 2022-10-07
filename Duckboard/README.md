@@ -10,6 +10,8 @@ It pulls duck photos and displays them in the app.
 
 Push the "Show me a duck!" button to load a photo of a duck. Once the photo is loaded, you can load a new duck, add the photo to your Duckboard by pushing the heart or toggle to your Duckboard to look at your photos.
 
+Push the heart again once its favorited to unfavorite the photo.
+
 Push the "Show me my Duckboard" button to show all the duck photos you favorited.
 
 On the Duckboard, you can click the "Edit" button to delete the photos. Click Done to exit the Editing view.

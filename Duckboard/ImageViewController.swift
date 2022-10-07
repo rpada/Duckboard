@@ -63,6 +63,7 @@ class ImageViewController: UIViewController {
     }
     @IBAction func unfavorite(_ sender: Any) {
         print("pressed 1")
+        fetchFlickrPhotos()
         self.FilledHeart.isHidden = true
         for delete in favoritePhoto.sharedInstance().favePhoto {
             if delete.coreURL == passedURL {
@@ -70,6 +71,24 @@ class ImageViewController: UIViewController {
                 try? dataController.viewContext.save()
             }
         }
+    }
+    
+    func fetchFlickrPhotos() -> [FavoritePhoto] {
+        let fetchRequest: NSFetchRequest<FavoritePhoto> = FavoritePhoto.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        print(fetchRequest)
+        do {
+            let result = try dataController.viewContext.fetch(fetchRequest)
+            favoritePhoto.sharedInstance().favePhoto = result
+            for fetchedPhoto in favoritePhoto.sharedInstance().favePhoto {
+             //   collectionPhotos.reloadData()
+            }
+            print("fetching 2")
+        } catch {
+            self.showAlertAction(title: "There was an error retrieving photos", message: "Sorry")
+        }
+        return favoritePhoto.sharedInstance().favePhoto
     }
     func showImage(){
         self.ActivityIndicator.isHidden = false

@@ -30,7 +30,7 @@ class IndividualViewPhoto: UIViewController {
     @IBOutlet weak var IndividualPhoto: UIImageView!
     
     override func viewDidLoad() {
-      //  self.ActivityIndicator.isHidden = true
+        self.ActivityIndicator.isHidden = true
         showPhoto()
     }
     
