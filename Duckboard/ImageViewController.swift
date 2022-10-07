@@ -61,8 +61,10 @@ class ImageViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
     @IBAction func unfavorite(_ sender: Any) {
         print("pressed 1")
+        // https://knowledge.udacity.com/questions/908565
         fetchFlickrPhotos()
         self.FilledHeart.isHidden = true
         for delete in favoritePhoto.sharedInstance().favePhoto {
@@ -72,7 +74,7 @@ class ImageViewController: UIViewController {
             }
         }
     }
-    
+    // https://knowledge.udacity.com/questions/908565
     func fetchFlickrPhotos() -> [FavoritePhoto] {
         let fetchRequest: NSFetchRequest<FavoritePhoto> = FavoritePhoto.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
