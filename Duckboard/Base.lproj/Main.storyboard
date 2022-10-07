@@ -33,18 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EP-db-oPu">
-                                <rect key="frame" x="51" y="628" width="128" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Show me a duck!"/>
-                                <connections>
-                                    <action selector="loadDuckPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sS0-sC-ja3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzi-Gl-XTb">
-                                <rect key="frame" x="209" y="626" width="140" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzi-Gl-XTb">
+                                <rect key="frame" x="213" y="575.33333333333337" width="140" height="54.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" titleAlignment="trailing">
                                     <string key="title">Show me
@@ -54,24 +44,44 @@ my Duckboard!</string>
                                     <action selector="takeMeToDuckboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VyF-fr-REh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home Page Ducks" translatesAutoresizingMaskIntoConstraints="NO" id="vdU-ec-kBf">
-                                <rect key="frame" x="0.0" y="289" width="390" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duckboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-VS-F1l">
-                                <rect key="frame" x="87" y="147" width="217" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="41"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="udF-QP-QCx">
-                                <rect key="frame" x="185" y="765" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EP-db-oPu">
+                                <rect key="frame" x="48" y="349" width="128.33333333333334" height="54.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128.33333333333334" id="SLk-sJ-mLs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show me a duck!"/>
+                                <connections>
+                                    <action selector="loadDuckPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sS0-sC-ja3"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="udF-QP-QCx">
+                                <rect key="frame" x="185" y="349" width="20" height="146.33333333333337"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146.33333333333337" id="BgS-fH-Som"/>
+                                </constraints>
                             </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="Home Page Ducks" translatesAutoresizingMaskIntoConstraints="NO" id="vdU-ec-kBf">
+                                <rect key="frame" x="92" y="188" width="207" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vdU-ec-kBf" secondAttribute="height" multiplier="23:17" id="gSL-Lt-c8V"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jzi-Gl-XTb" firstAttribute="top" secondItem="vdU-ec-kBf" secondAttribute="bottom" constant="8" id="Ezq-9a-kWr"/>
+                            <constraint firstItem="udF-QP-QCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ha7-Zk-vJI"/>
+                            <constraint firstItem="vdU-ec-kBf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Okh-eJ-mUT"/>
+                            <constraint firstItem="udF-QP-QCx" firstAttribute="centerX" secondItem="vdU-ec-kBf" secondAttribute="centerX" id="R8x-2t-g7b"/>
+                            <constraint firstItem="Jzi-Gl-XTb" firstAttribute="baseline" secondItem="3EP-db-oPu" secondAttribute="baseline" id="T1c-1y-kpz"/>
+                            <constraint firstItem="Jzi-Gl-XTb" firstAttribute="leading" secondItem="udF-QP-QCx" secondAttribute="trailing" constant="8" id="UVf-A3-z8M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3EP-db-oPu" secondAttribute="bottom" constant="180.66666666666674" id="gdj-dy-fvh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="udF-QP-QCx" secondAttribute="bottom" constant="18.666666666666629" id="h7C-Qx-uPY"/>
+                            <constraint firstItem="Jzi-Gl-XTb" firstAttribute="leading" secondItem="3EP-db-oPu" secondAttribute="trailing" constant="35.666666666666657" id="pMF-Xz-YKW"/>
+                            <constraint firstItem="vdU-ec-kBf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="207:844" id="zAf-yV-U0X"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TFp-tZ-A1y"/>
                     <connections>
@@ -82,7 +92,7 @@ my Duckboard!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-115" y="-36"/>
+            <point key="canvasLocation" x="-116.92307692307692" y="-36.96682464454976"/>
         </scene>
         <!--Favorites View-->
         <scene sceneID="Suw-xa-dyB">
@@ -195,53 +205,76 @@ my Duckboard!</string>
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-4R-TVC">
-                                <rect key="frame" x="16" y="260" width="358" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-Jr-YTI">
-                                <rect key="frame" x="83" y="775" width="224" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Show my Duckboard"/>
-                                <connections>
-                                    <action selector="showMyDuckboard:" destination="d0L-un-GAg" eventType="touchUpInside" id="0iz-Nx-yID"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6av-QF-Qu3">
-                                <rect key="frame" x="211" y="130" width="240" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
-                                <connections>
-                                    <action selector="buttonPress:" destination="d0L-un-GAg" eventType="touchUpInside" id="ekp-CI-qdR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwK-Kf-l9S">
-                                <rect key="frame" x="-51" y="204" width="202" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwK-Kf-l9S">
+                                <rect key="frame" x="-44" y="203" width="202" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="S01-Ov-NSS"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.counterclockwise" catalog="system" title=""/>
                                 <connections>
                                     <action selector="newImage:" destination="d0L-un-GAg" eventType="touchUpInside" id="RKq-tx-Nre"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-Pv-iNA" userLabel="Filled Heart">
-                                <rect key="frame" x="306" y="205" width="51" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-Pv-iNA" userLabel="Filled Heart">
+                                <rect key="frame" x="305" y="220" width="52" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="4fn-KT-cQB"/>
+                                    <constraint firstAttribute="height" constant="2" id="Kh9-sK-noe"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
                                 <connections>
                                     <action selector="unfavorite:" destination="d0L-un-GAg" eventType="touchUpInside" id="VtN-dQ-vcK"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="I09-JO-Eeb">
-                                <rect key="frame" x="185" y="661" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="I09-JO-Eeb">
+                                <rect key="frame" x="185" y="605" width="20" height="71"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-Jr-YTI">
+                                <rect key="frame" x="32" y="684" width="326" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hxh-aF-PNY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Show my Duckboard"/>
+                                <connections>
+                                    <action selector="showMyDuckboard:" destination="d0L-un-GAg" eventType="touchUpInside" id="0iz-Nx-yID"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6av-QF-Qu3">
+                                <rect key="frame" x="290" y="204" width="82" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="buttonPress:" destination="d0L-un-GAg" eventType="touchUpInside" id="ekp-CI-qdR"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-4R-TVC">
+                                <rect key="frame" x="16" y="255" width="358" height="341.99999999999994"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uUZ-3v-jEN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wwK-Kf-l9S" firstAttribute="leading" secondItem="xAE-Ay-4YJ" secondAttribute="leadingMargin" constant="-53" id="3bp-h8-nvY"/>
+                            <constraint firstItem="I3D-4R-TVC" firstAttribute="top" secondItem="xAE-Ay-4YJ" secondAttribute="top" constant="278.33333333333326" id="3nA-u5-396"/>
+                            <constraint firstItem="uUZ-3v-jEN" firstAttribute="bottom" secondItem="I09-JO-Eeb" secondAttribute="bottom" constant="162" id="85L-aP-RL2"/>
+                            <constraint firstItem="uUZ-3v-jEN" firstAttribute="trailing" secondItem="6av-QF-Qu3" secondAttribute="trailing" constant="18" id="ClK-vc-rro"/>
+                            <constraint firstItem="I09-JO-Eeb" firstAttribute="leading" secondItem="uUZ-3v-jEN" secondAttribute="leading" constant="185" id="Dx6-kD-fst"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n6U-Pv-iNA" secondAttribute="trailing" constant="17" id="Ev1-DJ-BEZ"/>
+                            <constraint firstItem="GAR-Jr-YTI" firstAttribute="top" secondItem="I3D-4R-TVC" secondAttribute="bottom" constant="15.666666666666742" id="HHS-rL-2Pf"/>
+                            <constraint firstItem="uUZ-3v-jEN" firstAttribute="bottom" secondItem="GAR-Jr-YTI" secondAttribute="bottom" constant="114" id="IhV-Nf-ZOZ"/>
+                            <constraint firstItem="I3D-4R-TVC" firstAttribute="centerX" secondItem="GAR-Jr-YTI" secondAttribute="centerX" id="NNz-Qy-Dxg"/>
+                            <constraint firstItem="I09-JO-Eeb" firstAttribute="top" secondItem="uUZ-3v-jEN" secondAttribute="top" constant="486" id="UVH-HU-veU"/>
+                            <constraint firstItem="I3D-4R-TVC" firstAttribute="centerX" secondItem="I09-JO-Eeb" secondAttribute="centerX" id="ahT-z7-mc9"/>
+                            <constraint firstItem="I3D-4R-TVC" firstAttribute="leading" secondItem="xAE-Ay-4YJ" secondAttribute="leadingMargin" id="cQq-k2-6JX"/>
+                            <constraint firstItem="n6U-Pv-iNA" firstAttribute="firstBaseline" secondItem="6av-QF-Qu3" secondAttribute="baseline" id="dDy-G3-DYZ"/>
+                            <constraint firstItem="I3D-4R-TVC" firstAttribute="top" secondItem="wwK-Kf-l9S" secondAttribute="bottom" constant="23.333333333333258" id="edP-Qj-tcR"/>
+                            <constraint firstItem="n6U-Pv-iNA" firstAttribute="top" secondItem="uUZ-3v-jEN" secondAttribute="top" constant="129" id="f0a-Sp-XNO"/>
+                            <constraint firstItem="n6U-Pv-iNA" firstAttribute="centerX" secondItem="6av-QF-Qu3" secondAttribute="centerX" id="fND-7g-XGq"/>
+                            <constraint firstItem="GAR-Jr-YTI" firstAttribute="leading" secondItem="uUZ-3v-jEN" secondAttribute="leading" constant="32" id="h7w-Nw-Afw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="MPo-vl-AMV"/>
                     <navigationItem key="navigationItem" id="aLW-VG-d0p"/>
