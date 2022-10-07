@@ -28,6 +28,7 @@ class CollectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("Fetched photo:", favoritePhoto.sharedInstance().favePhoto.count)
         } else {
             self.NoPhotosFound.isHidden = false
+            editButtonItem.isHidden = true
         }
     }
     // https://developer.apple.com/documentation/uikit/uiviewcontroller/1621378-setediting
